@@ -9,6 +9,7 @@ import fr.afcepf.al28.banque.entity.Compte;
 import fr.afcepf.al28.banque.entity.Utilisateur;
 import java.util.List;
 import fr.afcepf.al28.banque.dao.api.CompteDao;
+import fr.afcepf.al28.banque.entity.Client;
 import org.apache.log4j.Logger;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
@@ -34,9 +35,9 @@ public class CompteDaoImpl implements CompteDao {
     }
 
     @Override
-    public Utilisateur listeCompte(Utilisateur user) {
+    public Client listeCompte(Client user) {
         try {
-            user = (Utilisateur) sf.getCurrentSession().createQuery("SELECT c from Client c left join fetch c.comptes where c.id=:uid").
+            user = (Client) sf.getCurrentSession().createQuery("SELECT c from Client c left join fetch c.comptes where c.id=:uid").
                     setParameter("uid", "%" + user.getId()).
                     uniqueResult();
         } catch (Exception e) {

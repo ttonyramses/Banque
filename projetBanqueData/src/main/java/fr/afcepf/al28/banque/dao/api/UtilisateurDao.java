@@ -5,6 +5,8 @@
  */
 package fr.afcepf.al28.banque.dao.api;
 
+import fr.afcepf.al28.banque.entity.Compte;
+import fr.afcepf.al28.banque.entity.Operation;
 import fr.afcepf.al28.banque.entity.Utilisateur;
 import java.util.List;
 
@@ -14,8 +16,10 @@ import java.util.List;
  */
 public interface UtilisateurDao {
     
-    public Boolean identifier(Utilisateur user);
-    public Utilisateur ajouter(Utilisateur user);
+    public Utilisateur identifier(String mail, String mdp);
+    public Utilisateur ajouterUtilisateur(Utilisateur user);
+    public Compte ajouterCompte(Compte compte);
+    public Operation ajouterOperation(Operation op);
     public Boolean supprimer(Utilisateur user);
     public List<Utilisateur> rechercher (String nom);
     public Utilisateur loadUser(Integer id);

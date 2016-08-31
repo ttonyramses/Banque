@@ -5,8 +5,8 @@
  */
 package fr.afcepf.al28.banque.dao.api;
 
+import fr.afcepf.al28.banque.entity.Client;
 import fr.afcepf.al28.banque.entity.Compte;
-import fr.afcepf.al28.banque.entity.Utilisateur;
 import java.util.List;
 
 /**
@@ -15,5 +15,5 @@ import java.util.List;
  */
 public interface CompteDao {
     
-    public Utilisateur listeCompte(Utilisateur user);   
+    public Client listeCompte(Client user);   
 }
