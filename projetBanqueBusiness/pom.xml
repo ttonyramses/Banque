@@ -1,0 +1,52 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>fr.afcepf.al28</groupId>
+	<artifactId>projetBanqueBusiness</artifactId>
+	<version>1.0</version>
+
+	<properties>
+		<projet.banque.version>1.0</projet.banque.version>
+		<spring.version>4.0.8.RELEASE</spring.version>
+		<aspectj.version>1.6.11</aspectj.version>
+		<java.version>1.8</java.version>
+                <maven.compiler.plugin.version>3.5.1</maven.compiler.plugin.version>
+
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>fr.afcepf.al28</groupId>
+			<artifactId>projetBanqueData</artifactId>
+			<version>${projet.banque.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+			<version>${spring.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>${aspectj.version}</version>
+			<scope>compile</scope>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven.compiler.plugin.version}</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+		<finalName>${project.artifactId}</finalName><!-- Nom du .war ou .jar construit -->
+	</build>
+
+</project>
