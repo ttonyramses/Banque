@@ -1,5 +1,5 @@
 package fr.afcepf.al28.banque.entity;
- 
+
 import java.util.List;
 import java.util.Set;
 
@@ -18,26 +18,30 @@ import javax.persistence.Table;
 public class Compte {
 
 	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "numero", nullable = false)
-    private Integer numero;
+	private Integer numero;
 	@Column(name = "libelle", nullable = false)
-    private String libelle;
-	
+	private String libelle;
+
+	@Column(name = "solde", nullable = false)
+	private Double solde;
+
 	@ManyToOne
-	@JoinColumn(name="id_client")
-    private Client client;
+	@JoinColumn(name = "id_client")
+	private Client client;
 
 	@OneToMany(mappedBy = "compte")
 	private Set<Operation> operations;
 
-    public Compte() {
-    }
-    
-    public Compte(Integer numero, String libelle, Client client) {
+	public Compte() {
+	}
+
+	public Compte(Integer numero, String libelle, Double solde, Client client) {
 		super();
 		this.numero = numero;
 		this.libelle = libelle;
+		this.solde = solde;
 		this.client = client;
 	}
 
@@ -72,10 +76,13 @@ public class Compte {
 	public void setOperations(Set<Operation> operations) {
 		this.operations = operations;
 	}
-	
-	
-    
-  
 
+	public Double getSolde() {
+		return solde;
+	}
+
+	public void setSolde(Double solde) {
+		this.solde = solde;
+	}
 
 }

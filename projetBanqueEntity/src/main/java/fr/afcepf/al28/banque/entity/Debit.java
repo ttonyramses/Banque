@@ -14,24 +14,35 @@ public class Debit extends Operation {
 
 	@ManyToOne
 	@JoinColumn(name="numero_compte_credite")
-	private Compte compte;
+	private Compte compte_credite;
 
 	public Debit() {
 	}
 
-	public Debit(Integer id, Date dateOp, Double montant, String libelle, Compte compte, Compte compte2) {
+	
+
+	public Debit(Integer id, Date dateOp, Double montant, String libelle, Compte compte) {
 		super(id, dateOp, montant, libelle, compte);
-		compte = compte2;
 	}
 	
-	public Compte getCompte() {
-		return compte;
+	public Debit(Integer id, Date dateOp, Double montant, String libelle, Compte compte, Compte compte_credite) {
+		super(id, dateOp, montant, libelle, compte);
+		this.compte_credite = compte_credite;
 	}
 
-	
 
-	public void setCompte(Compte compte) {
-		this.compte = compte;
+
+
+	public Compte getCompte_credite() {
+		return compte_credite;
 	}
+
+
+
+	public void setCompte_credite(Compte compte_credite) {
+		this.compte_credite = compte_credite;
+	}
+
+
 
 }
