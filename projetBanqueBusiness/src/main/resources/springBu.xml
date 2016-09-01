@@ -6,6 +6,6 @@
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
 
-	<import resource="springData.xml" />
+	<import resource="classpath:springData.xml" />
 
 </beans>

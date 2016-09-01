@@ -22,7 +22,7 @@ public class PremierTestHibernate {
 	public static void main(String[] args) {
 
 		
-						BeanFactory bf=new ClassPathXmlApplicationContext("classpath:spring.xml");
+						BeanFactory bf=new ClassPathXmlApplicationContext("classpath:springData.xml");
 UtilisateurDao userDao = bf.getBean(UtilisateurDao.class);
 
 		try {

@@ -96,6 +96,11 @@ public class Utilisateur {
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
 	}
+
+    @Override
+    public String toString() {
+        return "Utilisateur{" + "id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", mdp=" + mdp + ", mail=" + mail + ", adresse=" + adresse + '}';
+    }
 	
 	
 

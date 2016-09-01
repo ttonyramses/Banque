@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<f:loadBundle basename="lang.banque" var="langBank"/>
+
+<f:view>
+	<ui:insert name="pageMetaData"></ui:insert>
+
+	<!--    		<f:loadBundle basename="resources" var="msg" />
+ -->
+	<h:head>
+		<link rel="stylesheet" href="../resources/css/bootstrap.min.css" />
+
+		<title><ui:insert name="pageTitle">Page Title</ui:insert></title>
+		<style type="text/css">
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+}
+
+.header {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+}
+
+.bottom {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	text-align: center;
+	vertical-align: middle;
+	color: #8E969D;
+}
+</style>
+	</h:head>
+
+	<h:body bgcolor="#ffffff">
+<div class="row">
+		<div class="col-xs-10">
+		<ui:include src="header.xhtml">
+			<ui:param name="appName" value="boutique" />
+		</ui:include>
+		</div>
+		<div class="col-xs-2">AFCEPF</div>
+</div>
+<div class="row">
+<div class="col-xs-12">
+		<ui:insert name="pageMenu">
+
+			<ui:include src="menu.xhtml">
+				<ui:param name="appName" value="boutique" />
+			</ui:include>
+		</ui:insert>
+		</div>
+</div>
+<div class="row">
+		<div class="col-xs-2"></div>
+		<div class="col-xs-10">
+		<ui:insert name="body">Page Body</ui:insert>
+		</div>
+</div>
+<div class="row">
+<div class="col-xs-12">
+		<ui:include src="footer.xhtml">
+			<ui:param name="" value="" />
+		</ui:include>
+</div>
+</div>
+	</h:body>
+</f:view>
+</html>
